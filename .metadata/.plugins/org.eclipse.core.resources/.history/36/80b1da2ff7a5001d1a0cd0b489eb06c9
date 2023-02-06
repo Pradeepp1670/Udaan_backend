@@ -1,0 +1,5 @@
+package com.udaan.entity;
+
+public class Admin {
+
+}
