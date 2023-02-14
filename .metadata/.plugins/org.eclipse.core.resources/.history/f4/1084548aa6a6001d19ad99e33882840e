@@ -1,0 +1,30 @@
+package com.udaan.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.udaan.entity.User;
+import com.udaan.repo.UserRepository;
+
+@Service
+public class UserService {
+
+	@Autowired
+	UserRepository urepo;
+	
+	public boolean login(User user) {
+		// TODO Auto-generated method stub
+		
+		if(urepo.findByUemail(user.getUemail())!=null) {
+			User pass = urepo.findByUemail(user.getUemail());
+			if(pass.getUpassword().equals(user.getUpassword())){
+				return true;
+			}
+			
+			return false;
+		}
+		return false;
+	}
+		
+	
+}

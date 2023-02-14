@@ -1,0 +1,16 @@
+package com.udaan.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.udaan.entity.Flight;
+import com.udaan.repo.FlightRepository;
+
+@Service
+public class FlightService {
+
+	@Autowired
+	FlightRepository frepo;
+	
+	public Flight addFlight()
+}

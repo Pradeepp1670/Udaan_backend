@@ -1,0 +1,18 @@
+package com.udaan.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.udaan.entity.Passenger;
+import com.udaan.repo.PassengerRepository;
+
+@Service
+public class PassengerService {
+
+	@Autowired
+	PassengerRepository prepo;
+	
+	public Passenger addPassenger(Passenger p1) {
+		
+	}
+}

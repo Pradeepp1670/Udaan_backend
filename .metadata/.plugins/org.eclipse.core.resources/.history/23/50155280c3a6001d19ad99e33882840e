@@ -1,0 +1,34 @@
+package com.udaan.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.udaan.entity.Schedule;
+import com.udaan.repo.ScheduleRepository;
+
+@Service
+public class ScheduleService {
+	
+	@Autowired
+	ScheduleRepository srepo;
+	
+	public void addSchedule(Schedule sch) {
+		Schedule s1 = new Schedule();
+		s1.setArrTime(sch.getArrTime());
+		s1.setBoarding(sch.getBoarding());
+		s1.setDepTime(sch.getDepTime());
+		s1.setDestination(sch.getDestination());
+		
+		srepo.save(s1);
+	}
+
+	public Schedule updateSchedule(Schedule sch) {
+		Schedule update = srepo.getById(sch.getSid());
+		update.setArrTime(sch.getArrTime());
+		update.setBoarding(sch.getBoarding());
+		update.setDepTime(sch.getDepTime());
+		update.setDestination(sch.getDestination());
+		
+		return srepo.save(update);
+	}
+}

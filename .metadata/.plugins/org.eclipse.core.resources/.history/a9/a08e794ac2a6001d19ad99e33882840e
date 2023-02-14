@@ -1,0 +1,20 @@
+package com.udaan.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.udaan.entity.Schedule;
+import com.udaan.repo.ScheduleRepository;
+
+@Service
+public class ScheduleService {
+	
+	@Autowired
+	ScheduleRepository srepo;
+	
+	public void addSchedule(Schedule sch) {
+		Schedule s1 = new Schedule();
+		
+	}
+
+}

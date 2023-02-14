@@ -1,0 +1,80 @@
+package com.udaan.entity;
+
+import lombok.Data;
+
+import java.util.List;
+
+import jakarta.persistence.*;
+
+@Entity
+@Data
+public class User {
+	@Id
+//	@GeneratedValue(strategy = GenerationType.AUTO)
+	private int uid;
+	private String uname;
+	private String uemail;
+	private String upassword;
+	private int uage;
+	private String uphone;
+	
+	@OneToMany(mappedBy = "user",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+	private List<Booking> booking;
+
+	public int getuId() {
+		return uId;
+	}
+
+	public void setuId(int uId) {
+		this.uId = uId;
+	}
+
+	public String getUname() {
+		return uname;
+	}
+
+	public void setUname(String uname) {
+		this.uname = uname;
+	}
+
+	public String getUemail() {
+		return uemail;
+	}
+
+	public void setUemail(String uemail) {
+		this.uemail = uemail;
+	}
+
+	public String getUpassword() {
+		return upassword;
+	}
+
+	public void setUpassword(String upassword) {
+		this.upassword = upassword;
+	}
+
+	public int getUage() {
+		return uage;
+	}
+
+	public void setUage(int uage) {
+		this.uage = uage;
+	}
+
+	public String getUphone() {
+		return uphone;
+	}
+
+	public void setUphone(String uphone) {
+		this.uphone = uphone;
+	}
+
+	public List<Booking> getBooking() {
+		return booking;
+	}
+
+	public void setBooking(List<Booking> booking) {
+		this.booking = booking;
+	}
+
+}

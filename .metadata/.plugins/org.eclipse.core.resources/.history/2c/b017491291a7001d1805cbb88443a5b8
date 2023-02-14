@@ -1,0 +1,46 @@
+package com.udaan.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.udaan.entity.Admin;
+import com.udaan.entity.User;
+import com.udaan.repo.AdminRepository;
+import com.udaan.repo.UserRepository;
+
+@Service
+public class AdminService {
+	
+	@Autowired
+	AdminRepository arepo;
+	@Autowired
+	UserRepository urepo;
+	
+	
+	public boolean login(Admin admin) {
+		if(arepo.findByAemail(admin.getAemail())!=null) {
+			Admin pass = arepo.findByAemail(admin.getAemail());
+			if(pass.getApassword().equals(admin.getApassword())){
+				return true;
+			}
+			
+			return false;
+		}
+		return false;
+	}
+	
+	
+	public List<User> getAllUser() {
+		return urepo.findAll();
+
+	}
+
+	
+	public User getUserById(int uid) {
+		// TODO Auto-generated method stub
+		return urepo.findById(uid).orElse(new User());
+	}
+
+}

@@ -21,6 +21,7 @@ public class Flight {
 //	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int fid;
 	private String fname;
+
 	private String fnumber;
 	private int seats;
 	private int price;
@@ -32,7 +33,5 @@ public class Flight {
 	@OneToOne
 	@JoinColumn(name = "schedule_id")
 	private Schedule schedule;
-	
-	
 
 }

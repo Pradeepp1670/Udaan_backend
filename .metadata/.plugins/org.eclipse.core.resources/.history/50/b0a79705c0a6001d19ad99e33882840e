@@ -1,0 +1,13 @@
+package com.udaan.service;
+
+import java.util.UUID;
+
+import org.springframework.stereotype.Service;
+
+@Service
+public class BookingService {
+
+	public void addBooking() {
+		String pnr = UUID.randomUUID().toString();
+	}
+}

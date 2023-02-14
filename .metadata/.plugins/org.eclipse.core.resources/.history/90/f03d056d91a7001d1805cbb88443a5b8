@@ -1,0 +1,28 @@
+package com.udaan.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+
+import com.udaan.service.AdminService;
+import com.udaan.service.CustomerService;
+
+public class CustomerController {
+	
+	@Autowired
+	CustomerService service;
+	
+	@PostMapping("/login")
+	public boolean loginCustomer(@RequestBody Customer user) {
+		System.out.println("user = " + user);
+		service.login(user);
+		if(service.login(user)==true) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+
+
+}

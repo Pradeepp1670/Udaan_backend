@@ -1,0 +1,5 @@
+package com.udaan.config;
+
+public class SecurityConfig {
+
+}

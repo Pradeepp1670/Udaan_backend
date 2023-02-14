@@ -22,6 +22,7 @@ public class Passenger {
 	private String pemail;
 	private String pcountry;
 	
+	
 	@ManyToOne
 	@JoinColumn(name = "booking_id")
 	private Booking booking;
@@ -29,4 +30,8 @@ public class Passenger {
 	@ManyToOne
 	@JoinColumn(name = "flight_id")
 	private Flight flight;
+	
+
+
+	
 }

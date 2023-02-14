@@ -1,0 +1,13 @@
+package com.udaan.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.udaan.service.AdminService;
+
+public class CustomerController {
+	
+	@Autowired
+	CustomerService service;
+
+
+}

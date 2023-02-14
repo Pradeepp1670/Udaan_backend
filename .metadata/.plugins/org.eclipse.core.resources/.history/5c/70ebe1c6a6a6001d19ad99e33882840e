@@ -1,0 +1,16 @@
+package com.udaan.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.udaan.repo.AdminRepository;
+
+@Service
+public class AdminService {
+	
+	@Autowired
+	AdminRepository arepo;
+	
+	
+
+}

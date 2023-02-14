@@ -1,0 +1,6 @@
+package com.udaan.service;
+
+@Servic
+public class AdminService {
+
+}

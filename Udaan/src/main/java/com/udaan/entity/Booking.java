@@ -21,13 +21,15 @@ public class Booking {
 //	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int bid;
 	
-	private int pnr;
+	private String pnr;
 
 	@ManyToOne
 	@JoinColumn(name = "user_id")
-	private User user;
+	private Customer user;
 	
 	@OneToMany(mappedBy = "booking",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
 	private List<Passenger> passenger;
+	
+	
 	
 }
